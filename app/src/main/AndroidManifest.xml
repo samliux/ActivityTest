@@ -1,0 +1,49 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.xinliu.activitytest">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 注册FirstActivity -->
+        <activity
+            android:name=".FirstActivity"
+            android:label="This is FirstActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 注册SecondActivity -->
+        <activity
+            android:name=".SecondActivity"
+            android:label="This is SecondActivity">
+
+            <intent-filter>
+                <!-- 这个url可以自己起名，只要跟FirstActivity中对上就行 -->
+                <action android:name="com.example.activitytest.ACTION_START"/>
+                <!-- 声明一个默认的（通用的）category -->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.example.activitytest.MY_CATEGORY"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 注册ThirdActivity -->
+        <activity
+            android:name=".ThirdActivity"
+            android:label="This is ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
